@@ -1,0 +1,37 @@
+nav{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height:50px;
+}
+nav > img{
+    position: absolute;
+    top:20%;
+    left:5px;
+    max-width:150px;
+    width: 25%;
+}
+nav > ul {
+    position: absolute;
+    right: 5%;
+    top:20%;
+    display: flex;
+    
+
+}
+li{
+    margin:10%;
+    text-decoration: none;
+    list-style: none;
+}
+@media only screen and (max-width: 700px) {
+    nav > ul {
+        position: absolute;
+        right: 10%;
+        top:10%;
+        display: flex;
+        
+    
+    }
+}
+
