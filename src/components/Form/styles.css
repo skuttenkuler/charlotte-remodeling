@@ -1,6 +1,6 @@
 form{
     height: 50vw;
-    background-image: linear-gradient(to bottom right,#a7f3d0,#6ee7b7,#34d399,#10b981);
+    background-image: linear-gradient(to bottom right,#0891b2,#0e7490,#155e75,#164e63);
     border-radius: 15px;
     box-shadow: 5px 5px 10px #064e3b;
     margin: 0 auto;
@@ -25,8 +25,8 @@ form{
     margin-top:12%;
 }
 .submit{
-    background-color:#fef3c7;
-  color:#1f2937;
+    background-color:#2563eb;
+  color:#ecfeff;
   width: 25vw;
   height: 5vw;
   font-size: 2vw;
@@ -48,10 +48,11 @@ form{
         height: 20rem;
         font-size: 2rem;
         border-radius: 10px;
+        width: 82.5vw;
     }
     .submit{
-        width: 75vw;
-        height: 20vw;
+        width: 60vw;
+        height: 15vw;
         font-size: 8vw;
     }
 }

@@ -2,55 +2,89 @@
     text-align: right;
     font-size:5vw;
 }
-.review-card{
-    text-align: left;
-    background-image: linear-gradient(to bottom right,#64748b,#475569,#334155,#1e293b);
+.reviews{
+    display: flex;
+    flex-wrap: wrap;
+    height: 30vw;
+    background-image: linear-gradient(to bottom right,#0891b2,#0e7490,#155e75,#164e63);
     box-shadow: 5px 5px 10px #0f172a;
     border-radius: 10px;
-    padding: 5%;
-    margin:5%;
+}
+.review-card{
+    text-align: left;
+    padding: 1%;
+    margin: 1%;
+    width: 27%;
+}
+.card-profile{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+.review{
+    position: absolute;
+    top: 0;
+    font-size: .9vw;
 }
 .review-card img{
-    width: 100px;
-    height: 100px;
+    width: 7vw;
+    height: 7vw;
     border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left:0;
 }
 .review-name{
-    font-size: 4vw;
-    margin-bottom: 10%;
+    font-size: 2vw;
+    position: absolute;
+    bottom: 5%;
+    right:12%;
 }
 @media only screen and (max-width: 700px) {
     .review-header{
-        font-size:8vw;
+        font-size:10vw;
     }
     .review-card{
         text-align: left;
-        background-image: linear-gradient(to bottom right,#64748b,#475569,#334155,#1e293b);
-        box-shadow: 5px 5px 10px #0f172a;
         border-radius: 10px;
         padding: 5%;
         margin:5%;
+        width: 100%;
     }
     .reviews{
-        width:100%;
-        padding:unset;
+        width: 100%;
+        padding: unset;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
     }
     .card-profile{
-        width:100%;
+        width: 80%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 25%;
+        position: unset;
+    }
+    .review{
+        position: unset;
+        font-size: 15px;
     }
     .review-card img{
-        width:  30vw;
-        height: 30vw;
+        width:  20vw;
+        height: 20vw;
         border-radius: 50%;
+        position: unset;
 
     }
     .review-name{
-        font-size: 7vw;
+        font-size: 5vw;
         margin-bottom: unset;
+        position: unset;
     }
 }
