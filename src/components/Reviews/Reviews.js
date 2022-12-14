@@ -39,7 +39,7 @@ const Reviews = () => {
                 </div>
             </li>
         </ul>
-        <button href="#">LEAVE A REVIEW</button>
+        <button href="#">SEE MORE REVIEWS</button>
     </div>
   );
 };

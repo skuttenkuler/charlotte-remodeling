@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <div className="container">
         <h4 className="header">Get in contact <br/>for your future project!</h4>
-        <button>Contact</button>
+        <a href="/contact"><button href="/contact">Contact</button></a>
     </div>
   );
 };

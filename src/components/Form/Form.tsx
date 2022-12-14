@@ -1,17 +1,26 @@
 import React, {useState} from 'react'
+import Axios from 'axios'
 import './styles.css'
 
+
 const Form = () => {
-    interface IForm {
-        name: string;
-        email: string;
-        body: string;
-      }
-    
+  interface IForm {
+    name: string;
+    email: string;
+    text: string;
+  }
+  const api = {
+    to:process.env["REACT_APP_TO_EMAIL"],
+    from:process.env["REACT_APP_FROM_EMAIL"],
+    endpoint:process.env["REACT_APP_API_ENDPOINT"],
+  }
+  console.log(api)
+      const [ error, setError ] = React.useState('');
+      const [success,setSuccess] = React.useState('');
       const [form, setFormValue] = useState<IForm>({
         name: "",
         email: "",
-        body: ""
+        text: ""
       });
     
       const updateForm = (
@@ -25,15 +34,36 @@ const Form = () => {
           [formKey]: value
         });
       };
-    
+      
       const handelSubmit = (e) => {
+        
         e.preventDefault();
-        console.log("Form Submitted! Values: ", form);
-      };
-    return  <div className="container">
-          <form onSubmit={handelSubmit}>
+        Axios.post(api.endpoint,{
+          to: api.to,
+          subject: form.name,
+          email:form.email,
+          text:form.text,
+          from: api.from
+        }).then(() => {
+            setFormValue({
+              name: "",
+              email: "",
+              text: ""
+            })
+            setSuccess('Your email was sent successfully!');
+        }).catch(err => {
+            console.log('Error in post request by axios',err);
+            setSuccess('');
+            setError(err.message || 'Unable to send with this email')
+        })
+          //console.log("Form Submitted! Values: ", form);
+        };
+    return <form onSubmit={handelSubmit}>
+          
             <div className="formblock">
-              <input
+            {error ? <p className="error-message ">{error}</p> : null}
+            {success ? <p className="success-message ">{success}</p> : null}
+              <input 
                 className="formfield"
                 type="text"
                 id="spacer"
@@ -56,13 +86,12 @@ const Form = () => {
                 className="formfield"
                 type="text"
                 placeholder="Description.."
-                value={form.body}
-                onChange={e => updateForm("body", e)}
+                value={form.text}
+                onChange={e => updateForm("text", e)}
               ></textarea>
             </div>
             <input className="submit" type="submit" value="SUBMIT" />
           </form>
-       </div>
   };
   
   export default Form;
