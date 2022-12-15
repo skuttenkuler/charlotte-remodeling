@@ -1,10 +1,10 @@
 form{
-    height: 50vw;
     background-image: linear-gradient(to bottom right,#0891b2,#0e7490,#155e75,#164e63);
     border-radius: 15px;
     box-shadow: 5px 5px 10px #064e3b;
     margin: 0 auto;
     margin-top: 5%; 
+    width:80%;
 }
 .formblock input{
     height:4rem;
@@ -39,13 +39,14 @@ form{
     margin: 0;
 }
 .error-message{
-
+    color:red;
 }
 @media only screen and (max-width: 700px) {
     form{
         height: 100%;
         margin: 0 auto;
         padding-bottom: 10%;
+        width:80%;
     }
     .formblock input{
         height:4rem;
@@ -56,7 +57,7 @@ form{
         height: 20rem;
         font-size: 2rem;
         border-radius: 10px;
-        width: 82.5vw;
+        width: 90%;
     }
     .submit{
         width: 60vw;
